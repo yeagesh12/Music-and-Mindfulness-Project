@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+header .navbar {
+  background: none;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 5px rgba(255,215,0,0.8);
+}
+
+.hero {
+  flex: 1;
+  height: 100vh;
+  background: url("images/DSC_5168.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero h1,
+.hero p {
+  color: #fff;
+  z-index: 1;
+}
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+.btn {
+  display: inline-block;
+  background: #ffd700;
+  color: #333;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #fff;
+  color: #6a5acd;
+  transform: translateY(-3px);
+}
+
+body.hobbies-page,
+body.gallery-page,
+body.about-page,
+body.contact-page {
+  color: #fff;
+  line-height: 1.6;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+body.hobbies-page { background-image: url("images/b76041c8-8539-4f66-8e83-5fdfe556f71a_RETINA_PORTRAIT_3_2.jpg"); }
+body.gallery-page { background-image: url("images/ar-rahman-announce-new-concert-770x442.jpg"); }
+body.about-page { background-image: url("images/e527d20726a9f45a3736ee5a8c92b2c2.jpg"); }
+body.contact-page { background-image: url("images/music event.jpg"); }
+
+body.hobbies-page::before,
+body.gallery-page::before,
+body.about-page::before,
+body.contact-page::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.content {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+.content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #91ef0c;
+  letter-spacing: 1px;
+}
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.hobby {
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hobby:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+.hobby h3 {
+  color: #4a4a8a;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.members {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  animation: fadeIn 1s ease-in-out;
+}
+.member-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px 20px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  animation: slideUp 1s ease both;
+}
+.member-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+.member-photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid #91ef0c;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: box-shadow 0.4s ease;
+}
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+.member-card:hover .member-photo img {
+  transform: scale(1.1);
+}
+.member-card:hover .member-photo {
+  box-shadow: 0 0 15px #91ef0c;
+}
+.member-card h3 {
+  color: #4a4a8a;
+  font-size: 1.2rem;
+}
+.member-card p {
+  color: #333;
+  font-size: 0.95rem;
+}
+.content.contact form {
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.content.contact input,
+.content.contact textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+.content.contact button {
+  background: #91ef0c;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.content.contact button:hover {
+  background: #7edb0a;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #91ef0c;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+footer button {
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+footer button:hover {
+  background: #fff;
+  color: #91ef0c;
+}
+
+
+
+.carousel-item img {
+  width: 100%;
+  height: 450px;           
+  object-fit: cover;       
+  border-radius: 15px;     
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 280px;         
+  }
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
