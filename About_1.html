@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Music & Mindfulness</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style_1.css">
+  <style>
+    
+    .members {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      opacity: 1;
+    }
+    .members.hidden {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="about-page">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Music & Mindfulness</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="About_1.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="Hobbie_1.html">Hobbies</a></li>
+            <li class="nav-item"><a class="nav-link" href="Gallery_1.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact_1.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="content about container mt-5">
+    <h2 class="text-center mb-4">Our Group Members</h2>
+    <p class="text-center">Meet the team behind <strong>Music & Mindfulness</strong> — a group of passionate individuals blending creativity, rhythm, and peace.</p>
+    <div class="row justify-content-center members">
+      <div class="col-md-3 col-sm-6 text-center member-card">
+        <div class="member-photo mb-3">
+          <img src="images/yeagesh.jpg" alt="Yeagesh" class="img-fluid rounded-circle shadow">
+        </div>
+        <h3>Yeagesh A/L Jagan</h3>
+        <p><strong>Matric No:</strong> 10DDT23F1117</p>
+        <p>Role: Web Designer</p>
+      </div>
+      <div class="col-md-3 col-sm-6 text-center member-card">
+        <div class="member-photo mb-3">
+          <img src="images/Elan.jpg" alt="Elancelvan" class="img-fluid rounded-circle shadow">
+        </div>
+        <h3>Elancelvan A/L Thiruselvan</h3>
+        <p><strong>Matric No:</strong> 10DDT23F1157</p>
+        <p>Role: Presentation Designer</p>
+      </div>
+      <div class="col-md-3 col-sm-6 text-center member-card">
+        <div class="member-photo mb-3">
+          <img src="images/amsyar.jpg" alt="Amsyar" class="img-fluid rounded-circle shadow">
+        </div>
+        <h3>Muhammad Amsyar Hakim</h3>
+        <p><strong>Matric No:</strong> 10DDT23F1113</p>
+        <p>Role: Storyboard Designer</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>© 2025 Music & Mindfulness</p>
+    <button id="toggleBtn" class="btn btn-outline-light btn-sm mt-2">Hide Members</button>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('toggleBtn');
+      const membersSection = document.querySelector('.members');
+
+      toggleBtn.addEventListener('click', () => {
+        membersSection.classList.toggle('hidden');
+        if (membersSection.classList.contains('hidden')) {
+          toggleBtn.textContent = 'Show Members';
+        } else {
+          toggleBtn.textContent = 'Hide Members';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
